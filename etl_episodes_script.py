@@ -1,7 +1,5 @@
 import csv
-import re
 import pymysql
-import datetime
 
 def process_csv_to_database(csv_file, database_name):
     try:

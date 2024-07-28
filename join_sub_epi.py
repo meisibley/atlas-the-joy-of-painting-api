@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-# Fetch data from CSV file
-# Add data to a list
-# Insert the list data into a MySQL database
+# Fetch subject ids from JOP_ColorsUsed.csv for each id(painting title) and add them to a list
+# Fetch episode id from episodes table where the title equals this csv file's title
+# Insert this episode id and its related subject ids into MySQL table epi_sub
 import csv
 import pymysql
 
