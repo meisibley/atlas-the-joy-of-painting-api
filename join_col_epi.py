@@ -34,7 +34,7 @@ try:
             # Insert data using prepared statement
             for i in range(10, 28):
                 if col_row[i] == '1':
-                    col_id = i
+                    col_id = i - 9
                     print(f"epi_iid is {epi_iid}, col_row[{i}] is {col_row[i]}, col_id: {col_id}")
                     try:
                         # cursor.execute(sql, (epi_iid, col_id))
