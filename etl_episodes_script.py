@@ -8,7 +8,7 @@ def process_csv_to_database(csv_file, database_name):
             host='localhost',
             user='root',
             password='root',
-            database=database_name
+            database='ETLdb'
         )
 
         cursor = connection.cursor()
