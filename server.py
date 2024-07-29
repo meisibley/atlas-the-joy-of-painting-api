@@ -47,12 +47,12 @@ def subjects():
 @app.route('/colors', methods=['POST'])
 def colors():
     title = request.get_json().get("title")
-    cursor.execute("SELECT episodes.id, episodes.title, colors.name \
-        FROM episodes \
-            INNER JOIN epi_col ON epi_col.epi_id = episodes.id \
-                INNER JOIN colors ON colors.id = epi_col.col_id \
+    cursor.execute("SELECT colors.id, episodes.title, colors.name \
+        FROM colors \
+            INNER JOIN epi_col ON epi_col.col_id = colors.id \
+                INNER JOIN episodes ON episodes.id = epi_col.epi_id \
                     WHERE episodes.title LIKE %s \
-                        ORDER BY episodes.id ASC;", (title))   
+                        ORDER BY colors.id ASC;", (title))   
     colors = cursor.fetchall()
     return jsonify(colors)
 
